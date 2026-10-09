@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget picker preview only; the live widget is drawn as an image by ModernClockWidget. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextClock
+        android:id="@+id/widget_time"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:autoSizeMaxTextSize="200sp"
+        android:autoSizeMinTextSize="24sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="Rookery-Regular"
+        android:format12Hour="hhmm"
+        android:format24Hour="HHmm"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="@color/modern_style_1" />
+
+    <TextClock
+        android:id="@+id/widget_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:format12Hour="EEE, MMM d"
+        android:format24Hour="EEE, MMM d"
+        android:paddingStart="12dp"
+        android:shadowColor="#80000000"
+        android:shadowRadius="4"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFFFF"
+        android:textSize="16sp" />
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material You colours from the wallpaper, dark by default to suit a lock screen editor. -->
+    <style name="Theme.DepthClock" parent="Theme.Material3.DynamicColors.Dark.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Depth Clock</string>
+    <string name="widget_name">Modern clock 1</string>
+    <string name="widget_description">Motorola Modern clock style 1 for the home screen</string>
+    <string name="section_style">Clock style</string>
+    <string name="section_layers">Depth</string>
+    <string name="section_color">Clock colour</string>
+    <string name="tool_move">Move</string>
+    <string name="tool_front">Front</string>
+    <string name="tool_back">Back</string>
+    <string name="hours_in_front">Hours in front</string>
+    <string name="pick_color">Pick from photo</string>
+    <string name="action_photo">Photo</string>
+    <string name="action_reset">Reset</string>
+    <string name="menu_slots_reset">Mark all styles empty (after a wipe)</string>
+    <string name="empty_hint">Pick a style below, then choose a photo with a clear subject.</string>
+    <string name="restart_banner">Restart your phone to show style %1$d on the lock screen.</string>
+</resources>

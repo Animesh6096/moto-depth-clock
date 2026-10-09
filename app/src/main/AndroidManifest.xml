@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Replacement for Motorola's DepthEffect app (absent on Edge 60 Pro) so Personalize's Modern depth clock works. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Personalize requests this; nothing on the Edge 60 Pro defines it. -->
+    <permission
+        android:name="com.motorola.permission.depthwallpaper.BIND_DEPTH_WALLPAPER"
+        android:protectionLevel="normal" />
+
+    <uses-feature android:name="android.software.live_wallpaper" />
+
+    <!-- Per-minute redraw of the home screen clock widget. -->
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+    <!-- Read Motorola's clock fonts from Personalize's assets for an accurate preview. -->
+    <queries>
+        <package android:name="com.motorola.personalize" />
+    </queries>
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:theme="@style/Theme.DepthClock">
+
+        <!-- Ask Play services to fetch the segmentation model at install time. -->
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="subject_segment" />
+
+        <!-- Personalize opens this via com.motorola.deptheffect.INTERNAL_SCREEN_EDIT; also on the launcher. -->
+        <activity
+            android:name=".EditActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.motorola.deptheffect.INTERNAL_SCREEN_EDIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Personalize's f.i() looks for a WallpaperService in this package; it is applied as the lock wallpaper. -->
+        <service
+            android:name=".service.DepthWallpaperService"
+            android:directBootAware="true"
+            android:exported="true"
+            android:label="Depth Clock"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/wallpaper" />
+        </service>
+
+        <!-- Home screen widget: Motorola Modern clock style 1. -->
+        <receiver
+            android:name=".ModernClockWidget"
+            android:exported="false"
+            android:label="@string/widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/modern_clock_widget_info" />
+        </receiver>
+
+        <!-- Personalize pulls fg/bg images via call("request_current_wallpaper"). -->
+        <provider
+            android:name=".DepthWallpaperProvider"
+            android:authorities="com.motorola.deptheffect.depth_wallpaper"
+            android:directBootAware="true"
+            android:exported="true" />
+    </application>
+</manifest>
