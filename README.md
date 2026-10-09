@@ -4,9 +4,11 @@ Unlock Motorola's **Modern depth clock** (the lock screen clock that sits *behin
 
 > **Unofficial.** This project is not affiliated with, endorsed by, or supported by Motorola or Lenovo. "Motorola" and "Moto" are trademarks of their owners. A Motorola update can change the behaviour this relies on and break it at any time.
 
+> **Tested only on the Motorola Edge 60 Pro** (Android 17). It has not been tried on any other phone. Other Motorola models may work if their Personalize app has the same hidden Modern clock, but that is unverified. If you try it on another model, please open an issue with the result.
+
 ## Why this exists
 
-Some Motorola phones on Android 17 (tested: **Edge 60 Pro**) already contain the whole Modern depth clock inside Motorola's *Personalize* app. Only one piece is missing: Motorola's separate depth-effect app, which supplies the photo and the cut-out of its subject. Personalize hides the Modern clock until that app exists.
+The Motorola Edge 60 Pro on Android 17 already contains the whole Modern depth clock inside Motorola's *Personalize* app (other models may too; untested). Only one piece is missing: Motorola's separate depth-effect app, which supplies the photo and the cut-out of its subject. Personalize hides the Modern clock until that app exists.
 
 Moto Depth Clock fills that gap. It installs under the package name Personalize looks for, answers Personalize in the format it expects, and gives you an editor to make the depth photo. The clock itself is still Motorola's own, drawn by the phone's lock screen.
 
@@ -31,7 +33,7 @@ Moto Depth Clock fills that gap. It installs under the package name Personalize 
 - A computer with ADB to install it (it's not on the Play Store).
 - No root.
 
-Tested on: Motorola Edge 60 Pro, Android 17, build `A171VVH.36-23`, Personalize `01.0.8.268`.
+**Tested on one device only:** Motorola Edge 60 Pro, Android 17, build `A171VVH.36-23`, Personalize `01.0.8.268`. Nothing else has been tested.
 
 ## Build and install
 
