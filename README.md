@@ -113,4 +113,4 @@ See [docs/how-it-works.md](docs/how-it-works.md) for what Personalize expects, h
 
 ## License
 
-[Apache License 2.0](LICENSE). This repository contains only original code. It does not include any Motorola code, apps or fonts; the widget and preview load Motorola's fonts from the phone at runtime.
+Copyright 2026 Animesh Bhattacharjee. Licensed under the [Apache License 2.0](LICENSE); see also [NOTICE](NOTICE). This repository contains only original code. It does not include any Motorola code, apps or fonts; the widget and preview load Motorola's fonts from the phone at runtime.
